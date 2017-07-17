@@ -57,3 +57,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #jQurey 
 gem 'jquery-rails', '~> 4.3.1'
+
