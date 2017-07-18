@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 text-center">
 
-    <h2>Log In</h2>
+    <h2>Zaloguj</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
@@ -16,13 +16,13 @@
 
       <% if devise_mapping.rememberable? %>
         <div class="form-group">
-          <%= f.check_box :remember_me %> Remember Me
+          <%= f.check_box :remember_me %> Zapamietaj mnie
         </div>
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log In", class: "btn btn-primary" %>
-        <%= link_to "Forgot Password", new_user_password_path, class: "btn btn-primary" %>
+        <%= f.submit "Login", class: "btn btn-primary" %>
+        <%= link_to "Zapomnialem haslo", new_user_password_path, class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>
