@@ -1,0 +1,26 @@
+<%= form_for @picture do |f| %>
+	<div class="form-group">
+		<label>URL:</label>
+		<%= f.text_field :url, placeholder: "adres do obrazka", class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<label>NAZWA:</label>
+		<%= f.text_field :title, placeholder: "nazwa sztandaru", class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<label>ROK WYKONANIA:</label>
+		<%= f.select :year, (Time.zone.now.year - 15)..(Time.zone.now.year + 1), prompt: "----", class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<label>TAG:</label>
+		<%= f.select :tag, [["policyjne","policyjne"], ["szkolne","szkolne"], ["strazackie","strazackie"], ["lowieckie","lowieckie"], ["proporce","proporce"], ["choragwie","choragwie"], ["akcesoria","akcesoria"], ["inne","inne"]], prompt: "Wybierz kategorie", class: "form-control" %>
+	</div>
+
+<div class="actions">
+	<%= f.submit "Zapisz", class: "btn btn-primary" %>
+	<%= link_to "Anuluj", pictures_path, class: "btn btn-danger" %>
+</div>
+<% end %>
