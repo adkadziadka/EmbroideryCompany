@@ -25,21 +25,20 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sztandary<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><%= link_to "→ Policyjne", root_path %></li>
-              <li><%= link_to "→ Szkolne", root_path %></li>
-              <li><%= link_to "→ Strazackie", root_path %></li>
-              <li><%= link_to "→ Lowieckie", root_path %></li>
-              <li><%= link_to "→ Inne", root_path %></li>
+              <li><%= link_to "→ Policyjne", pictures_path(tag: "policyjne") %></li>
+              <li><%= link_to "→ Szkolne", pictures_path(tag: "szkolne") %></li>
+              <li><%= link_to "→ Strazackie", pictures_path(tag: "strazackie") %></li>
+              <li><%= link_to "→ Lowieckie", pictures_path(tag: "lowieckie") %></li>
+              <li><%= link_to "→ Inne", pictures_path(tag: "inne") %></li>
             </ul>
-            <li><%= link_to "Choragwie", root_path %></li>
-            <li><%= link_to "Proporce", root_path %></li>
-            <li><%= link_to "Akcesoria", root_path %></li>
+            <li><%= link_to "Choragwie", pictures_path(tag: "choragwie") %></li>
+            <li><%= link_to "Proporce", pictures_path(tag: "proporce") %></li>
+            <li><%= link_to "Akcesoria", pictures_path(tag: "akcesoria") %></li>
             <li><%= link_to "Kontakt", root_path %></li>
             </ul>
           </li>
         <% else %>
         <% end %>
-
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

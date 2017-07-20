@@ -1,7 +1,11 @@
 class PicturesController < ApplicationController
 
 	def index
-		@pictures = Picture.all
+		if params[:tag].present?
+			@pictures = Picture.where(tag: params[:tag])
+		else
+			@pictures = Picture.all
+		end
 	end
 
 	def new
@@ -33,7 +37,7 @@ class PicturesController < ApplicationController
 	def destroy
 		@picture = Picture.find(params[:id])
 		@picture.destroy
-		redirect_to pictures_path, notice: "Obraz zostal usuniety"
+		redirect_to pictures_path, alert: "Czy aby napewno?"
 	end
 
 	private
