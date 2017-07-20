@@ -1,8 +1,31 @@
 <% if !user_signed_in? %>
-	<h1>Pages#home</h1>
-	<p>Find me in app/views/pages/home.html.erb</p>
+	<h1>Profesjonalny haft reczny tworzony z pasja.
+		<br>
+		<small class="text-muted">Tu laczy sie tradycja i profesjonalizm</small>
+	</h1>
+	<br>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.</p>
 <% else %>
 <div class="jumbotron">
 	<h1> Witaj, Steniu!</h1>
 	<div class="time" id="clock"></div>
+</div>
+<br>
+<div class="row">
+	<% @pictures.each do |picture| %>
+		<div class="col-sm-6 col-md-2">
+			<div class="thumbnail">
+				<%= image_tag(picture.url) %>
+				<div class="caption">
+					<h4><%= picture.title %></h4><h5>Rok: <%= picture.year %> </h5>
+					<h5>Tag: <i><%= picture.tag %></i></h5>
+					<br>
+					<p><%= link_to "Edytuj", edit_picture_path(picture.id), class: "btn btn-primary" %>
+					<%= link_to "Usun", picture_path(picture.id), :confirm => "Are you sure?", :method => :delete, class: "btn btn-danger" %></p>
+				</div>
+			</div>
+		</div>
+	<% end%> 
+	<br>
+</div>
 <% end %>
